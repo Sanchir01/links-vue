@@ -4,7 +4,7 @@ export function useGetAllUrl() {
   return useQuery({
     queryKey: ["urlList"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:4200/api/url");
+      const res = await fetch(`https://url-shortener.emgushovs.ru/api/url`);
       return res.json();
     },
   });

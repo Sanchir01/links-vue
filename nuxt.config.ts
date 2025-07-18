@@ -30,4 +30,9 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "shadcn-nuxt",
   ],
+  runtimeConfig: {
+    public: {
+      PROD_URL: import.meta.env.PROD_URL || "http://localhost:4200/api",
+    },
+  },
 });
