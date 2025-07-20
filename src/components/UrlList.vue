@@ -13,9 +13,12 @@ const { data, isLoading, isSuccess, isError, error } = useGetAllUrl();
 
     <ul v-else-if="isSuccess && data?.length" class="space-y-2">
       <li v-for="item in data" :key="item.id" class="p-2 rounded">
-        <NuxtLink :to="item.url">
-          {{ item.url }}
-        </NuxtLink>
+        <div class="flex gap-2 items-center">
+          <NuxtLink :to="item.url">
+            {{ item.url }}
+          </NuxtLink>
+          <RemoveUrl :id="item.id" />
+        </div>
       </li>
     </ul>
 
