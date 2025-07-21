@@ -4,5 +4,7 @@ import { Toaster } from "../ui/sonner";
 
 <template>
   <Toaster />
-  <slot />
+  <ClientOnly> 
+    <slot />
+  </ClientOnly>
 </template>

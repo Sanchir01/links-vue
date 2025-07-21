@@ -4,6 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
+  app: {
+    head: {
+      script: [{ src: "https://telegram.org/js/telegram-web-app.js" }],
+    },
+  },
   typescript: {
     typeCheck: true,
   },
@@ -16,11 +21,15 @@ export default defineNuxtConfig({
     layouts: "./src/shared/layouts",
     plugins: "./src/shared/plugins",
   },
+
   components: {
     dirs: ["./src/components", "./src/shared/ui"],
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ["tame-rabbits-raise.loca.lt"],
+    },
   },
 
   modules: [
@@ -29,7 +38,9 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "shadcn-nuxt",
+    "@formkit/auto-animate/nuxt",
   ],
+  autoAnimate: {},
   runtimeConfig: {
     public: {
       PROD_URL: import.meta.env.PROD_URL || "http://localhost:4200/api",

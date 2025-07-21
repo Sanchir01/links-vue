@@ -11,7 +11,7 @@ const { data, isLoading, isSuccess, isError, error } = useGetAllUrl();
       Произошла ошибка: {{ error?.message || "Неизвестная ошибка" }}
     </div>
 
-    <ul v-else-if="isSuccess && data?.length" class="space-y-2">
+    <ul v-auto-animate v-else-if="isSuccess && data?.length" class="space-y-2">
       <li v-for="item in data" :key="item.id" class="p-2 rounded">
         <div class="flex gap-2 items-center">
           <NuxtLink :to="item.url">

@@ -3,6 +3,10 @@ import { computed } from "vue";
 import { useColorMode } from "@vueuse/core";
 
 const isDark = computed(() => useColorMode().value == "dark");
+const { tg, isTelegram } = useTelegram();
+if (isTelegram) {
+  console.log("this tg");
+}
 </script>
 
 <template>

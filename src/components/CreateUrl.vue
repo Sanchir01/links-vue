@@ -6,8 +6,13 @@ import { useCreateUrl } from '../shared/hooks/createUrl'
 const inputValue = ref('');
 const mutation = useCreateUrl();
 
-const handleSend = () => {
-    mutation.mutate(inputValue.value);
+const handleSend = async  () => {
+  try {
+   await  mutation.mutate(inputValue.value);
+  inputValue.value = ""
+  } catch (e) {
+    console.log(e)
+  }
 };
 </script>
 <template>
