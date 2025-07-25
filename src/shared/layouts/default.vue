@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import { Toaster } from "../ui/sonner";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Toaster />
-  <ClientOnly> 
-    <slot />
-  </ClientOnly>
+	<main>
+		<slot />
+	</main>
 </template>
