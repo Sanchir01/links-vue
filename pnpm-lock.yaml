@@ -22,6 +22,9 @@ importers:
       '@nuxt/image':
         specifier: 1.10.0
         version: 1.10.0(db0@0.3.2)(ioredis@5.6.1)(magicast@0.3.5)
+      '@pinia/nuxt':
+        specifier: 0.11.2
+        version: 0.11.2(magicast@0.3.5)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
       '@tailwindcss/vite':
         specifier: ^4.1.11
         version: 4.1.11(vite@6.3.5(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))
@@ -52,6 +55,9 @@ importers:
       nuxt-toast:
         specifier: 1.1.4
         version: 1.1.4(izitoast@1.4.0)(magicast@0.3.5)
+      pinia:
+        specifier: ^3.0.3
+        version: 3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
       reka-ui:
         specifier: ^2.3.2
         version: 2.3.2(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
@@ -74,9 +80,6 @@ importers:
         specifier: ^4.0.5
         version: 4.0.5
     devDependencies:
-      '@twa-dev/types':
-        specifier: ^8.0.2
-        version: 8.0.2
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1814,6 +1817,14 @@ packages:
       }
     engines: { node: '>= 10.0.0' }
 
+  '@pinia/nuxt@0.11.2':
+    resolution:
+      {
+        integrity: sha512-CgvSWpbktxxWBV7ModhAcsExsQZqpPq6vMYEe9DexmmY6959ev8ukL4iFhr/qov2Nb9cQAWd7niFDnaWkN+FHg==
+      }
+    peerDependencies:
+      pinia: ^3.0.3
+
   '@pkgjs/parseargs@0.11.0':
     resolution:
       {
@@ -2323,12 +2334,6 @@ packages:
       }
     engines: { node: '>=10.13.0' }
 
-  '@twa-dev/types@8.0.2':
-    resolution:
-      {
-        integrity: sha512-ICQ6n4NaUPPzV3/GzflVQS6Nnu5QX2vr9OlOG8ZkFf3rSJXzRKazrLAbZlVhCPPWkIW3MMuELPsE6tByrA49qA==
-      }
-
   '@tybys/wasm-util@0.10.0':
     resolution:
       {
@@ -2616,6 +2621,12 @@ packages:
     resolution:
       {
         integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==
+      }
+
+  '@vue/devtools-api@7.7.7':
+    resolution:
+      {
+        integrity: sha512-lwOnNBH2e7x1fIIbVT7yF5D+YWhqELm55/4ZKf45R9T8r9dE2AIOy8HKjfqzGsoTHFbWbr337O4E0A0QADnjBg==
       }
 
   '@vue/devtools-core@7.7.7':
@@ -6375,6 +6386,18 @@ packages:
       }
     engines: { node: '>=12' }
 
+  pinia@3.0.3:
+    resolution:
+      {
+        integrity: sha512-ttXO/InUULUXkMHpTdp9Fj4hLpD/2AoJdmAbAeW2yu1iy1k+pkFekQXw5VpC0/5p51IOR/jDaDRfRWRnMMsGOA==
+      }
+    peerDependencies:
+      typescript: '>=4.4.4'
+      vue: ^2.7.0 || ^3.5.11
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   pkg-types@1.3.1:
     resolution:
       {
@@ -9608,6 +9631,13 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.1
       '@parcel/watcher-win32-x64': 2.5.1
 
+  '@pinia/nuxt@0.11.2(magicast@0.3.5)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))':
+    dependencies:
+      '@nuxt/kit': 3.17.6(magicast@0.3.5)
+      pinia: 3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
+    transitivePeerDependencies:
+      - magicast
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -9864,8 +9894,6 @@ snapshots:
 
   '@trysound/sax@0.2.0': {}
 
-  '@twa-dev/types@8.0.2': {}
-
   '@tybys/wasm-util@0.10.0':
     dependencies:
       tslib: 2.8.1
@@ -10121,6 +10149,10 @@ snapshots:
       he: 1.2.0
 
   '@vue/devtools-api@6.6.4': {}
+
+  '@vue/devtools-api@7.7.7':
+    dependencies:
+      '@vue/devtools-kit': 7.7.7
 
   '@vue/devtools-core@7.7.7(vite@6.3.5(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))(vue@3.5.17(typescript@5.8.3))':
     dependencies:
@@ -12558,6 +12590,13 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.2: {}
+
+  pinia@3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)):
+    dependencies:
+      '@vue/devtools-api': 7.7.7
+      vue: 3.5.17(typescript@5.8.3)
+    optionalDependencies:
+      typescript: 5.8.3
 
   pkg-types@1.3.1:
     dependencies:

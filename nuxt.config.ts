@@ -34,7 +34,8 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'shadcn-nuxt',
 		'@formkit/auto-animate/nuxt',
-		'nuxt-toast'
+		'nuxt-toast',
+		'@pinia/nuxt'
 	],
 	autoAnimate: {},
 	runtimeConfig: {
